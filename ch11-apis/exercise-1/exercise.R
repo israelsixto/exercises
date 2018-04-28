@@ -2,15 +2,21 @@
 
 # Load the httr and jsonlite libraries for accessing data
 # You can also load `dplyr` if you wish to use it
+library(httr)
+library(jsonlite)
+library(dplyr)
 
 
 # Create a variable for the API's base URI (https://api.github.com)
 
+API_base <- 'https://api.github.com'
 
 # Under the "Repositories" category, find the endpoint that will list repos in 
 # an organization
 # Create a variable `resource` that represents the endpoint for the book
 # organization (you can use `paste0()` to construct this, or enter it manually)
+
+resource <- 'orgs/{org}/repos{?type,page,per_page,sort}'
 
 
 # Send a GET request to this endpoint (the base.uri followed by the resource)
