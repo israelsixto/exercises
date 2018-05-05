@@ -81,7 +81,7 @@ ggplot(data = diamonds_sample) +
 # Draw a line plot (with line geometry) for `diamonds_sample`. The x-position 
 # should be mapped to carat, y-position to price, and color to cut.
 ggplot(data = diamonds_sample) +
-  geom_point(mapping = aes(x = carat, y = cut, size = price))
+  geom_point(mapping = aes(x = carat, y = cut, size = price))]
 
 # That's kind of messy. Try using `smooth` geometry instead.
 ggplot(data = diamonds_sample) +
@@ -114,8 +114,9 @@ ggplot(data = diamonds_sample) +
 # Give the points an `alpha` (transparency) of 0.3 to make the plot look nicer
 ggplot(data = diamonds_sample) +
   geom_point(mapping = aes(x = carat, y = price, color = cut), alpha = 0.3) + 
-  geom_smooth(mapping = aes(x = carat, y = price, color = cut), se = FALSE)
-
+  geom_smooth(mapping = aes(x = carat, y = price, color = cut), se = FALSE) +
+  facet_wrap(~cut)
+?geom_smooth()
 ## Bonus
 # Draw a bar chart of average diamond prices by clarity, and include "error bars"
 # marking the standard error of each measurement.
